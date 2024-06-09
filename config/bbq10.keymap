@@ -70,7 +70,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &mkp TAB                                                                                             &kp LCLK
+                 &kp TAB                                                                                             &Mkp LCLK
     &kp LGUI                &kp CLCK                            &mkp LCLK                          &mkp RCLK                    &kp LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I   &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L   &kp BSPC
