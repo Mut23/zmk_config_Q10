@@ -26,6 +26,7 @@
             bindings = <&mkp LCLK>, <&bt BT_CLR>;
         };
     };
+
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -50,7 +51,7 @@
 
         app_shift {
             bindings = <&kp LA(TAB)>;
-            timeout-ms = <1600>;
+            timeout-ms = <2000>;
             key-positions = <2>;
             layers = <0>;
         };
@@ -73,9 +74,9 @@
 
                  &kp TAB                                                                                             &mkp LCLK
     &kp LGUI                &kp CLCK                            &mkp LCLK                          &mkp RCLK                    &kp LALT
-    &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I   &bhm PLUS O  &bhm AT P
-    &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L   &kp BSPC
-    &kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M     &kp RSHFT    &kp ENTER
+    &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
+    &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L  &kp BSPC
+    &kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
     &kp LCTRL               &kp N0                            &kp SPACE                          &tog SYM                          &tog UPPER
             >;
         };
@@ -96,8 +97,8 @@
         upper_layer {
 
             bindings = <
-                 &msc SCRL_UP                                                                                       &msc SCRL_DOWN
-    &bt BT_SEL 0            &bt BT_SEL 1                             &td0                           &mkp RCLK                     &bootloader
+                 &bt BT_SEL 0                                                                                       &bt BT_SEL 1
+    &msc SCRL_UP            &msc SCRL_DOWN                             &td0                           &mkp RCLK                     &bootloader
     &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp KP_EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
     &kp LSHFT    &none      &none       &none      &none             &none         &none            &none           &none            &kp ENTER
