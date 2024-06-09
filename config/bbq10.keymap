@@ -19,11 +19,20 @@
 
 / {
     behaviors {
-        td0: tap_dance_0 {
+        bt0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mkp LCLK>, <&bt BT_CLR>;
+            bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
+        };
+    };
+
+    behaviors {
+        bt1: tap_dance_1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <1>;
+            tapping-term-ms = <400>;
+            bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
         };
     };
 
@@ -97,8 +106,8 @@
         upper_layer {
 
             bindings = <
-                 &bt BT_SEL 0                                                                                       &bt BT_SEL 1
-    &msc SCRL_UP            &msc SCRL_DOWN                             &td0                           &mkp RCLK                     &bootloader
+                 &bt0                                                                                       &bt1
+    &msc SCRL_UP            &msc SCRL_DOWN                         &mkp LCLK                           &mkp RCLK                     &bootloader
     &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp KP_EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
     &kp LSHFT    &none      &none       &none      &none             &none         &none            &none           &none            &kp ENTER
