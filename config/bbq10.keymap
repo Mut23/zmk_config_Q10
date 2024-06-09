@@ -28,9 +28,9 @@
     };
 
     behaviors {
-        bt1: tap_dance_1 {
+        bt1: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             tapping-term-ms = <400>;
             bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
         };
