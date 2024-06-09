@@ -44,7 +44,7 @@
             bindings = <&kp LA(TAB)>;
             timeout-ms = <2000>;
             key-positions = <2>;
-            layers = <0>;
+            layers = <0,1>;
         };
     };
 
