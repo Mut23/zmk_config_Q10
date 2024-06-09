@@ -45,10 +45,6 @@
         };
     };
 
-    &sk {
-       release-after-ms = <2000>;
-    };
-
     combos {
         compatible = "zmk,combos";
         combo_shiftapp {
