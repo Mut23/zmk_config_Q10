@@ -60,8 +60,8 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                             &kp LALT
-    &kp CLCK                &kp LGUI                            &mkp LCLK                          &mkp RCLK                    &kp TAB
+                 &mkp LCLK                                                                                             &kp TAB
+    &kp LGUI                &kp CLCK                            &mkp LCLK                          &mkp RCLK                    &kp LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I   &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L   &kp BSPC
     &kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M     &kp RSHFT    &kp ENTER
@@ -74,7 +74,7 @@
 
             bindings = <        
                  &kp C_VOL_UP                                                                                       &kp C_VOL_DN
-    &kp PSCRN               &kp C_AC_SEARCH                     &mkp LCLK                          &mkp RCLK                         &kp C_MUTE 
+    &kp PSCRN               &kp CLCK                             &mkp LCLK                          &mkp RCLK                         &kp C_MUTE 
     &kp HASH     &kp N1     &kp N2      &kp N3    &mt LBKT LPAR     &mt RBKT RPAR  &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON      &kp SEMICOLON    &kp DQT          &kp APOS         &kp BSPC
     &kp LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL       &kp COMMA        &kp DOT          &kp DLLR         &kp ENTER
