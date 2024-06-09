@@ -54,6 +54,17 @@
         };
     };
 
+    behaviors {
+      skq: sticky_key_quick_release {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&sk combo_shiftapp>;
+        release-after-ms = <1000>;
+        quick-release;
+        ignore-modifiers;
+      };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -70,7 +81,7 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                             &kp LALT
-    &kp CLCK                &combo_shiftapp LALT             &mkp LCLK                          &mkp RCLK                    &kp TAB
+    &kp CLCK                &skq LALT             &mkp LCLK                          &mkp RCLK                    &kp TAB
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I   &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L   &kp BSPC
     &kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M     &kp RSHFT    &kp ENTER
