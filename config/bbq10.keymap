@@ -50,7 +50,7 @@
 
         app_shift {
             bindings = <&kp LA(TAB)>;
-            timeout-ms = <800>;
+            timeout-ms = <1600>;
             key-positions = <2>;
             layers = <0>;
         };
