@@ -45,6 +45,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        app_shift {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <2>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
