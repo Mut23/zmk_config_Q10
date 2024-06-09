@@ -51,6 +51,7 @@
         app_shift {
             bindings = <&kp LA(TAB)>;
             key-positions = <2>;
+            layers = <0>;
         };
     };
 
