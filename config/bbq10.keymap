@@ -47,7 +47,7 @@
         compatible = "zmk,combos";
 
         app_shift {
-            bindings = <&sk LALT &kp LA(TAB)>;
+            bindings = <&kp LA(TAB)>;
             timeout-ms = <2000>;
             key-positions = <2>;
             layers = <0>,<1>;
@@ -70,7 +70,7 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                  &kp TAB                                                                                             &mkp LCLK
-    &kp LGUI                &kp CLCK                            &mkp LCLK                          &mkp RCLK                    &kp LALT
+    &kp LGUI                &kp CLCK                            &mkp LCLK                          &mkp RCLK                    &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L  &kp BSPC
     &kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
