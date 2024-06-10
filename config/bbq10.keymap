@@ -47,7 +47,7 @@
         compatible = "zmk,combos";
 
         app_shift {
-            bindings = <&sk LA(TAB)>;
+            bindings = <&kp LALT &kp LA(TAB)>;
             timeout-ms = <2000>;
             key-positions = <2>;
             layers = <0>,<1>;
@@ -73,8 +73,8 @@
     &kp LGUI                &kp CLCK                            &mkp LCLK                          &mkp RCLK                    &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMICOLON J  &bhm DQT K    &bhm APOS L  &kp BSPC
-    &kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
-    &kp LCTRL               &kp N0                            &kp SPACE                          &tog SYM                          &tog UPPER
+    &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
+    &sk LCTRL               &kp N0                            &kp SPACE                          &tog SYM                          &tog UPPER
             >;
         };
 
@@ -86,8 +86,8 @@
     &kp PSCRN               &kp CLCK                             &mkp LCLK                          &mkp RCLK                         &kp C_MUTE 
     &kp HASH     &kp N1     &kp N2      &kp N3    &mt LBKT LPAR     &mt RBKT RPAR  &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON      &kp SEMICOLON    &kp DQT          &kp APOS         &kp BSPC
-    &kp LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL       &kp COMMA        &kp DOT          &kp DLLR         &kp ENTER
-    &kp LCTRL               &kp N0                              &kp SPACE                          &tog SYM                          &tog UPPER
+    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL       &kp COMMA        &kp DOT          &kp DLLR         &kp ENTER
+    &sk LCTRL               &kp N0                              &kp SPACE                          &tog SYM                          &tog UPPER
             >;
         };
 
@@ -98,8 +98,8 @@
     &msc SCRL_UP            &msc SCRL_DOWN                         &mkp LCLK                           &mkp RCLK                     &bootloader
     &none        &kp UP     &none       &none      &kp LBKT          &kp RBKT      &kp LT           &kp GT          &kp PIPE         &kp EQUAL
     &kp LEFT     &kp DOWN   &kp RIGHT   &none      &kp BSLH          &kp AMPS      &kp LBRC         &kp RBRC        &kp CARET        &kp BSPC
-    &kp LSHFT    &kp PSCRN  &none       &none      &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
-    &kp LCTRL               &kp N0                                 &kp SPACE              &tog SYM                         &tog UPPER
+    &sk LSHFT    &kp PSCRN  &none       &none      &kp PRCNT         &kp TILDE     &none            &none           &bt BT_CLR       &kp ENTER
+    &sk LCTRL               &kp N0                                 &kp SPACE              &tog SYM                         &tog UPPER
             >;
         };
     };
