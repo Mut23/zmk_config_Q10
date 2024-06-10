@@ -16,13 +16,13 @@
 #define SYM 1
 #define UPPER 2
 
-
-/ {
-    &sk {
+&sk {
        release-after-ms = <2500>;
        quick-release;
        ignore-modifiers;
    };
+
+/ {
 
     behaviors {
         hm: homerow_mods {
@@ -47,7 +47,7 @@
         compatible = "zmk,combos";
 
         app_shift {
-            bindings = <&kp LA(TAB)>;
+            bindings = <&sk LA(TAB)>;
             timeout-ms = <2000>;
             key-positions = <2>;
             layers = <0>,<1>;
