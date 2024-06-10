@@ -55,7 +55,7 @@
         zed_em_rpar: zed_em_rpar {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp KP_N4 &kp KP_N1>,<&macro_release &kp LALT>;
+            bindings = <&macro_tap &sk LSHFT &kp U &kp PLUS &kp KP_N0 &kp KP_N0 &kp KP_N2 &kp KP_N9>;
         };
 
         zed_em_semi: zed_em_semi {
