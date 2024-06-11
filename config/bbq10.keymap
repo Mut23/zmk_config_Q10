@@ -94,7 +94,7 @@
     &kp TAB                &zed_em_shiftapp                            &td0                          &mkp RCLK                         &sk LALT 
     &kp HASH     &kp N1     &kp N2      &kp N3    &kp LPAR          &kp RPAR           &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
-    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt DLLR C_MUTE  &kp ENTER
+    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
     &sk LCTRL               &kp N0                              &kp SPACE                          &tog SYM                          &tog UPPER
             >;
         };
