@@ -58,7 +58,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&macro_press &kp LALT>,<&kp LA(TAB)>,<&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,<&macro_tap &kp LA(TAB)>,<&macro_release &kp LALT>;
         };
     };
 
@@ -77,8 +77,8 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &kp TAB                                                                                             &mkp LCLK
-    &zed_em_shiftapp                &kp CLCK                            &td0                          &mkp RCLK                    &sk LALT
+                 &mkp LCLK                                                                                             &mkp RCLK
+    &kp TAB                &zed_em_shiftapp                            &td0                          &mkp RCLK                    &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
@@ -91,10 +91,10 @@
 
             bindings = <        
                  &kp C_VOL_UP                                                                                       &kp C_VOL_DN
-    &zed_em_shiftapp               &kp CLCK                             &td0                          &mkp RCLK                         &kp C_MUTE 
+    &kp TAB                &zed_em_shiftapp                            &td0                          &mkp RCLK                         &sk LALT 
     &kp HASH     &kp N1     &kp N2      &kp N3    &kp LPAR          &kp RPAR           &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
-    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &kp DLLR         &kp ENTER
+    &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt DLLR C_MUTE  &kp ENTER
     &sk LCTRL               &kp N0                              &kp SPACE                          &tog SYM                          &tog UPPER
             >;
         };
