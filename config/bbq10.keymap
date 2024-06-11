@@ -58,7 +58,7 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <40>;
-            bindings = <&macro_press &kp LT(ALT)>,<&macro_release &KP LT(ALT)>;
+            bindings = <&macro_press &kp LA(TAP)>,<&macro_release &KP LA(TAP)>;
         };
     };
 
