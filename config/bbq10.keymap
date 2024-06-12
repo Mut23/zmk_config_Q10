@@ -56,8 +56,8 @@
         zed_em_shiftapp: zed_em_shiftapp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5000>;
-            tap-ms = <5000>;
+            //wait-ms = <5000>;
+            //tap-ms = <5000>;
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_release &kp LALT>;
         };
     };
