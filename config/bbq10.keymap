@@ -58,7 +58,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <400>;
-            bindings = <&kp>, <&mkp LCLK>;
+            bindings = <&kp>, <&mkp>;
         };
     };
 
