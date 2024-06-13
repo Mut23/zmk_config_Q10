@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&mkp LCLK>,<&kp CLCK>,<&mkp MCLK>;
+            bindings = <&mkp LCLK>,<&kp CLCK>;
         };
     };
 
@@ -77,7 +77,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                             &mkp RCLK
+                 &mkp LCLK                                                                                             &mkp MCLK
     &kp TAB                &zed_em_shiftapp                            &td0                          &mkp RCLK                    &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
