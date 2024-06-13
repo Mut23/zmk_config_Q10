@@ -23,25 +23,6 @@
    };
 
 / {
-
-    behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&mkp LCLK>,<&kp CLCK>;
-        };
-    };
-
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            bindings = <&out &kp>;
-        };
-    };
-
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
