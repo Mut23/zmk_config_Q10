@@ -56,12 +56,6 @@
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp LEFT>,<&macro_release &kp LALT>;
         };
 
-        zmdown: zmdown {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &msc SCRL_DOWN>;
-        };
-
         switchapp: zed_em_switchapp {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -83,9 +77,11 @@
         stc1: shiftapp_scrolldown_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            bindings = <&zmdown>, <&switchapp>;
+            quick-tap-ms = <125>;
+	           require-prior-idle-ms = <125>;
+            bindings = <&msc>, <&switchapp>;
         };
     };
 
@@ -105,7 +101,7 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                  &mkp LCLK                                                                                             &zed_em_back
-    &stc0 SCRL_UP TAB                &stc1            &mousemod CLCK LCLK                           &mkp RCLK                      &sk LALT
+    &stc0 SCRL_UP TAB                &stc1 SCRL_DOWN zed_em_switchapp             &mousemod CLCK LCLK                           &mkp RCLK                      &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
     &sk LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C  &bhm QMARK V      &bhm EXCL B   &bhm COMMA N      &bhm DOT M    &kp RSHFT    &kp ENTER
@@ -118,7 +114,7 @@
 
             bindings = <        
                  &kp C_VOL_UP                                                                                       &kp C_VOL_DN
-    &stc0 SCRL_UP TAB                 &stc1            &mousemod CLCK LCLK                          &mkp RCLK                        &sk LALT 
+    &stc0 SCRL_UP TAB                 &stc1 SCRL_DOWN zed_em_switchapp            &mousemod CLCK LCLK                          &mkp RCLK                        &sk LALT 
     &kp HASH     &kp N1     &kp N2      &kp N3    &kp LPAR          &kp RPAR           &kp UNDER        &kp MINUS        &kp PLUS         &kp AT
     &kp STAR     &kp N4     &kp N5      &kp N6    &kp KP_DIVIDE     &kp COLON          &kp SEMI         &kp DQT          &kp APOS         &kp BSPC
     &sk LSHFT    &kp N7     &kp N8      &kp N9    &kp QMARK         &kp EXCL           &kp COMMA        &kp DOT          &mt C_MUTE DLLR  &kp ENTER
