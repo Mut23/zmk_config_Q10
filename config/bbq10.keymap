@@ -41,17 +41,6 @@
         };
     };
 
-    behaviors {
-        left_right: left_right {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp RIGHT>;
-            mods = <(MOD_LALT|MOD_LALT)>;
-            //keep-mods = <(MOD_RSFT)>;
-        };
-    };
-
-
     macros {
         shiftapp: zed_em_shiftapp {
             compatible = "zmk,behavior-macro";
@@ -91,7 +80,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 //        -----------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                             &left_right
+                 &mkp LCLK                                                                                             &zed_em_back
     &stc0 SCRL_UP TAB                &msc SCRL_DOWN              &mousemod CLCK LCLK                           &mkp RCLK                      &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LPAR T       &bhm RPAR Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H  &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
