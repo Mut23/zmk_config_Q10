@@ -69,11 +69,11 @@
 
     behaviors {
         stc1: shiftapp_scrolldown_mods {
-            compatible = "zmk,behavior-hold-tap","zmk,behavior-macro";
+            compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <400>;
-            bindings = <&msc>, <&zed_em_shiftapp>;
+            bindings = <&msc>, <&mo>;
         };
     };
 
