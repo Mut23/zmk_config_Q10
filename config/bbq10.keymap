@@ -45,7 +45,7 @@
 
    //单击ESC，双按Capslock
     behaviors {
-        esccapslock: esc_capslock_dance {
+        esccapslock: tap_dance_esccapslock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
