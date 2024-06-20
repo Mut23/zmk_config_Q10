@@ -43,7 +43,7 @@
         };
     };
 
-   //单击鼠标左键，长按Capslock
+   //单击ESC，长按Capslock
     behaviors {
         mousemod: mouse_click_hold {
             compatible = "zmk,behavior-hold-tap";
@@ -126,7 +126,7 @@
         };
     };
 
-   //单击ESC，双击浏览器返回
+   //单击鼠标右键，双击浏览器返回
     behaviors {
         td1: tap_dance_1 {
             compatible = "zmk,behavior-tap-dance";
@@ -151,7 +151,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &mkp LCLK                                                                                              &mousemod ESC CLCK 
+                 &mkp LCLK                                                                                              &mousemod CLCK ESC
          &stc0 SCRL_UP TAB        &td0           &mkp LCLK                   &td1                          &sk LALT
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
