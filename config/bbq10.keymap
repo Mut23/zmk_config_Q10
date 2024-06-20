@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&kp ESC>, <&mkp CLCK>;
+            bindings = <&kp ESC>, <&kp CLCK>;
         };
     };
 
