@@ -39,16 +39,23 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>;
+            bindings = <&tobt0>, <&bt BT_SEL 1>;
         };
     };
 
     macros {
+        //切换设备1
+        tobt0: zed_em_tobt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to DEFAULT>;
+        };
+
         //切换程序
         shiftapp: zed_em_shiftapp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_wait_time 250>,<&macro_release &kp LALT>;
         };
 
         //浏览器返回快捷键
@@ -169,8 +176,8 @@
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&zen_em_adhome>, <&shiftapp>;
+            tapping-term-ms = <250>;
+            bindings = <&shiftapp>, <&zen_em_adhome>;
         };
     };
 
