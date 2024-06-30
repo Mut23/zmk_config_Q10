@@ -21,13 +21,11 @@
        release-after-ms = <2500>;
    };
 
-/ {
-     prog_caps: prog_caps {
-        compatible = "zmk,behavior-caps-word";
-        #binding-cells = <0>;
-        continue-list = <SPACE>;
-    };
+&caps_word {
+    continue-list = <SPACE>;
+};
 
+/ {
    //单击层1字符，长按层2字符
     behaviors {
         bhm: balanced_homerow_mods {
