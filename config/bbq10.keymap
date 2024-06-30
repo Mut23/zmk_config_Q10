@@ -58,11 +58,11 @@
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_wait_time 250>,<&macro_release &kp LALT>;
         };
 
-        //切换程序
+        //
         lclickholding: zed_em_lclickholding {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &mkp LCLK>,<&macro_wait_time 1000>,<&macro_release &mkp LCLK>;
+            bindings = <&macro_press &mkp LCLK>,<&macro_tap_time 1000>,<&macro_release &mkp LCLK>;
         };
 
         //浏览器返回快捷键
