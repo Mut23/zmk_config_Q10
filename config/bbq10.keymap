@@ -58,13 +58,6 @@
             bindings = <&macro_press &kp LALT>,<&macro_tap &kp TAB>,<&macro_wait_time 250>,<&macro_release &kp LALT>;
         };
 
-        //
-        lclickholding: zed_em_lclickholding {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &mkp LCLK>,<&macro_tap_time 1000>,<&macro_release &mkp LCLK>;
-        };
-
         //浏览器返回快捷键
         zed_em_back: zed_em_back {
             compatible = "zmk,behavior-macro";
@@ -293,7 +286,7 @@
 //        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
 // -----------------------------------------------------------------------------------------------------------------------------------------------
 
-                 &lclickholding                                                                                              &kp CLCK
+                 &sk LCLK                                                                                              &kp CLCK
          &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &mkp RCLK                          &td0
     &bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R  &bhm LEFT T       &bhm RIGHT Y   &bhm UNDER U      &bhm MINUS I  &bhm PLUS O  &bhm AT P
     &bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F  &bhm KP_DIVIDE G  &bhm COLON H   &bhm SEMI J       &bhm DQT K    &bhm APOS L  &kp BSPC
