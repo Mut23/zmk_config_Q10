@@ -50,7 +50,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
-            bindings = <&tobt0>, <&tobt1>;
+            bindings = <&bt BT_SEL 0>, <&bt BT_SEL 1>;
         };
     };
 
@@ -221,7 +221,7 @@
 
    //双击关闭浏览器标签页
     behaviors {
-        tdclosetab: tap_dance_closetab {
+        tdclosetab: tap_dance_closetab { 
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <400>;
