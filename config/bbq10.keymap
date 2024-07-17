@@ -164,16 +164,6 @@
         };
     };
 
-   //单击鼠标左键，双击鼠标右键
-    behaviors {
-        td3: tap_dance_3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&mkp LCLK>, <&mkp RCLK>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -218,8 +208,8 @@
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
     &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &none             &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
     &kp LC(A)          &kp LEFT          &kp RIGHT        &kp LA(RIGHT)     &none          &kp LC(HOME)      &none       &none             &none            &mt DEL BSPC
-    &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &kp LA(LEFT)      &none       &kp LG(D)         &td1             &kp ENTER
-                  &msc SCRL_UP          &msc SCRL_DOWN            &td3                     &to SYM              &to DEFAULT
+    &tdesccaplok       &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &mkp RCLK         &none       &kp LG(D)         &td1             &kp ENTER
+                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &to SYM              &to DEFAULT
             >;
         };
     };
