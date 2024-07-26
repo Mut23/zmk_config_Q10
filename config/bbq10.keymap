@@ -177,11 +177,11 @@
 
             bindings = <        
         &none                                                                                                    &none
-       &to DEFAULT                  &to UPPER           &mkp LCLK             &rcm LA(LEFT) RCLK                                    &shiftapp 
+       &none                       &none                &mkp LCLK             &none                              &none 
     &kp HASH       &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER     &kp MINUS      &kp PLUS           &mt PRCNT AT
     &kp STAR       &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI      &kp DQT        &kp APOS           &kp BSPC
-    &none          &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &mt C_MUTE DLLR    &kp ENTER
-                 &none                &kp N0                    &none                     &none               &none
+    &to DEFAULT    &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &mt C_MUTE DLLR    &kp ENTER
+                 &to UPPER          &kp N0                    &none                     &none               &none
             >;
         };
 
