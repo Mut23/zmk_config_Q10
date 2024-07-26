@@ -134,6 +134,16 @@
         };
     };
 
+   //双击浏览器刷新    
+    behaviors {
+        tdrefresh: tap_dance_refresh { 
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings =<&kp R>, <&kp LC(R)>;
+        };
+    };
+
    //单击输入解锁密码，双击进入bootloder
     behaviors {
         td1: tap_dance_1 {
@@ -173,7 +183,7 @@
          &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &rcm LA(LEFT) RCLK                          &shiftapp
     &bhm HASH Q    &bhm N1 W    &bhm N2 E    &bhm N3 R    &bhm LEFT T         &bhm RIGHT Y     &bhm UNDER U      &bhm MINUS I    &bhm PLUS O    &bhm AT P
     &bhm STAR A    &bhm N4 S    &bhm N5 D    &bhm N6 F    &bhm KP_DIVIDE G    &bhm COLON H     &bhm SEMI J       &bhm DQT K      &bhm APOS L    &kp BSPC
-    &kp LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
+    &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
                  &sk LCTRL        &kp N0                   &kp SPACE                     &sl 1             &tdtoupper
             >;
         };
@@ -196,10 +206,10 @@
             bindings = <
         &mkp LCLK                                                                                                 &btswitch
         &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
-    &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &kp LC(Y)         &kp UP       &kp C_VOL_DN      &kp C_VOL_UP     &td2
-    &kp LC(A)          &kp LC(S)         &kp LC(D)        &kp LA(RIGHT)     &none          &kp LC(HOME)      &kp DOWN     &none             &none            &mt DEL BSPC
-    &kp ESC            &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &kp LEFT          &kp RIGHT    &kp LG(D)         &td1             &kp ENTER
-                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &mkp RCLK             &tdtodefault
+    &tdclosewindow     &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)         &none       &kp C_VOL_DN      &kp C_VOL_UP     &td2
+    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &none          &kp LC(HOME)      &none       &none             &none            &mt DEL BSPC
+    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &mkp RCLK         &mkp RCLK   &kp LG(D)         &td1             &kp ENTER
+                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &sl 1             &tdtodefault
             >;
         };
     };
