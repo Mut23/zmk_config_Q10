@@ -94,6 +94,26 @@
         };
     };
 
+   //双击进入层UPPER
+    behaviors {
+        tdtoupper: tap_dance_toupper {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&none>, <&to UPPER>;
+        };
+    };
+
+   //双击进入层DEFAULT
+    behaviors {
+        tdtodefault: tap_dance_todefault {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&none>, <&to DEFAULT>;
+        };
+    };
+
    //双击关闭程序
     behaviors {
         tdclosewindow: tap_dance_closewindow {
@@ -154,7 +174,7 @@
     &bhm HASH Q    &bhm N1 W    &bhm N2 E    &bhm N3 R    &bhm LEFT T         &bhm RIGHT Y     &bhm UNDER U      &bhm MINUS I    &bhm PLUS O    &bhm AT P
     &bhm STAR A    &bhm N4 S    &bhm N5 D    &bhm N6 F    &bhm KP_DIVIDE G    &bhm COLON H     &bhm SEMI J       &bhm DQT K      &bhm APOS L    &kp BSPC
     &kp LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
-                 &sk LCTRL        &kp N0                   &kp SPACE                     &sl 1             &to UPPER
+                 &sk LCTRL        &kp N0                   &kp SPACE                     &sl 1             &tdtoupper
             >;
         };
 
@@ -179,7 +199,7 @@
     &tdclosewindow     &tdclosetab       &kp LC(END)      &kp LC(R)         &kp LC(T)      &kp LC(Y)         &kp UP       &kp C_VOL_DN      &kp C_VOL_UP     &td2
     &kp LC(A)          &kp LC(S)         &kp LC(D)        &kp LA(RIGHT)     &none          &kp LC(HOME)      &kp DOWN     &none             &none            &mt DEL BSPC
     &kp ESC            &kp LC(Z)         &kp LC(X)        &kp LC(C)         &kp LC(V)      &kp LEFT          &kp RIGHT    &kp LG(D)         &td1             &kp ENTER
-                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &mkp RCLK             &to DEFAULT
+                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &mkp RCLK             &tdtodefault
             >;
         };
     };
