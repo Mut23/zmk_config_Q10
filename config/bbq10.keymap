@@ -21,10 +21,6 @@
        release-after-ms = <2500>;
    };
 
-&sl {
-    release-after-ms = <2000>;
-};
-
 / {
    //单击层1字符，长按层2字符
     behaviors {
