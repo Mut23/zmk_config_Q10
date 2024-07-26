@@ -80,7 +80,7 @@
         shiftapp: zen_em_shiftapp{
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =<&macro_press &kt LALT>, <&macro_tap &kp TAB>, <&macro_release &kp LALT>, <&macro_release &kp TAB>;
+            bindings =<&macro_press &kt LALT>, <&macro_tap &kp TAB>, <&macro_release &kp TAB>;
         }; 
   };
 
@@ -99,7 +99,7 @@
         tdtoupper: tap_dance_toupper {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <350>;
             bindings = <&none>, <&to UPPER>;
         };
     };
@@ -109,7 +109,7 @@
         tdtodefault: tap_dance_todefault {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <250>;
+            tapping-term-ms = <350>;
             bindings = <&none>, <&to DEFAULT>;
         };
     };
