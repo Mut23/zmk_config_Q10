@@ -1,166 +1,56 @@
-  /*
+/*
  * Copyright (c) 2023 ZitaoTech
  *
  * SPDX-License-Identifier: MIT
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
 
-
-#define DEFAULT 0
 #define SYM 1
 #define UPPER 2
 
-&sk {
-       release-after-ms = <2500>;
-   };
-
 / {
-   //单击层1字符，长按层2字符
+    behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <400>;
+            bindings = <&mkp LCLK>, <&bt BT_CLR>;
+        };
+    };
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            bindings = <&out &kp>;
+        };
+    };
+
     behaviors {
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
         };
     };
 
-   //单击返回，长按浏览器返回
-    behaviors {
-        rcm: rclick_capslock_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <280>;
-            bindings = <&kp>, <&mkp>;
-        };
-    };
+    combos {
+        compatible = "zmk,combos";
 
-   //切换蓝牙设备
-    behaviors {
-        btswitch: tap_dance_btswitch {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&tobt0>, <&tobt1>;
-        };
-    };
-
-    macros {
-        //切换设备1
-        tobt0: zed_em_tobt0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 0>,<&macro_tap &to UPPER>;
-        };
-
-        //切换设备2
-        tobt1: zed_em_tobt1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &bt BT_SEL 1>,<&macro_tap &to UPPER>;
-        };
-
-        //解锁密码
-        pwd: zen_em_pwd{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_tap &kp SPACE &kp SPACE &kp SPACE &kp SPACE>;
-        }; 
-
-        //切换程序
-        shiftapp: zen_em_shiftapp{
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =<&macro_press &kt LALT>, <&macro_tap &kp TAB>, <&macro_release &kp TAB>;
-        }; 
-  };
-
-   //单击PC切换输入法，双击RShift
-    behaviors {
-        tdrshift: tap_dance_rshift {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings =<&kp LG(SPACE)>, <&kp RSHFT>;
-        };
-    };
-
-   //双击进入层UPPER
-    behaviors {
-        tdtoupper: tap_dance_toupper {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&none>, <&to UPPER>;
-        };
-    };
-
-   //双击进入层DEFAULT
-    behaviors {
-        tdtodefault: tap_dance_todefault {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <350>;
-            bindings = <&none>, <&to DEFAULT>;
-        };
-    };
-
-   //双击关闭程序
-    behaviors {
-        tdclosewindow: tap_dance_closewindow {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings =<&kp Q>, <&kp LA(F4)>;
-        };
-    };
-
-   //双击关闭浏览器标签页
-    behaviors {
-        tdclosetab: tap_dance_closetab { 
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings =<&kp W>, <&kp LC(W)>;
-        };
-    };
-
-   //双击浏览器刷新    
-    behaviors {
-        tdrefresh: tap_dance_refresh { 
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings =<&kp R>, <&kp LC(R)>;
-        };
-    };
-
-   //单击输入解锁密码，双击进入bootloder
-    behaviors {
-        td1: tap_dance_1 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&pwd>, <&bootloader>;
-        };
-    };
-
-   //双击键盘软重启
-    behaviors {
-        td2: tap_dance_2 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <400>;
-            bindings = <&none>, <&sys_reset>;
+        app_shift {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <3>;
+            layers = <0>;
         };
     };
 
@@ -168,49 +58,36 @@
         compatible = "zmk,keymap";
 
         default_layer {
-
             bindings = <
-// -----------------------------------------------------------------------------------------------------------------------------------------------         
-//         |    Shoulder Key1    |                                                                             |    Shoulder Key2    |     
-// |         Call key      |      Blackberry Key        |    Trackpad    |             Back Key                |             Endcall Key          |
-// |     Q      |     W    |     E    |     R    |      T      |       Y        |       U        |        I        |       O      |      P        |     
-// |     A      |     S    |     D    |     F    |      G      |       H        |       J        |        K        |       L      |      ←        |  
-// |     alt    |     Z    |     X    |     C    |      V      |       B        |       N        |        M        |       $      |    Enter      |   
-//        |         aA     |         0           |           SPACE              |         SYM         |        aA          |       
-// -----------------------------------------------------------------------------------------------------------------------------------------------
-
-                 &mkp LCLK                                                                                              &btswitch
-         &msc SCRL_UP                  &msc SCRL_DOWN           &mkp LCLK                   &mkp RCLK                          &shiftapp
-    &bhm HASH Q    &bhm N1 W    &bhm N2 E    &bhm N3 R    &bhm LEFT T         &bhm RIGHT Y     &bhm UNDER U      &bhm MINUS I    &bhm PLUS O    &bhm AT P
-    &bhm STAR A    &bhm N4 S    &bhm N5 D    &bhm N6 F    &bhm KP_DIVIDE G    &bhm COLON H     &bhm SEMI J       &bhm DQT K      &bhm APOS L    &kp BSPC
-    &sk LSHFT      &bhm N7 Z    &bhm N8 X    &bhm N9 C    &bhm QMARK V        &bhm EXCL B      &bhm COMMA N      &bhm DOT M      &tdrshift      &kp ENTER
-                 &sk LCTRL        &kp N0                   &kp SPACE                     &sl 1             &tdtoupper
+&mkp LCLK    &mkp RCLK
+&kp CLCK     &kp LGUI   &mkp LCLK  &mt ESC K_BACK  &kp TAB
+&bhm HASH Q  &bhm N1 W  &bhm N2 E  &bhm N3 R       &bhm LPAR T   &bhm RPAR Y     &bhm UNDER U  &bhm MINUS I  &bhm PLUS O  &bhm AT P
+&bhm STAR A  &bhm N4 S  &bhm N5 D  &bhm N6 F       &bhm SLASH G  &bhm COLON H    &bhm SEMI J   &bhm APOS K   &bhm DQT L   &kp BSPC
+&kp LSHFT    &bhm N7 Z  &bhm N8 X  &bhm N9 C       &bhm QMARK V  &bhm EXCL B     &bhm COMMA N  &bhm DOT M    &kp SEMI     &kp ENTER
+                        &kp LCTRL                  &kp LALT      &kp SPACE       &tog SYM      &tog UPPER
             >;
         };
 
-
         sym_layer {
-
-            bindings = <        
-        &none                                                                                                    &none
-       &none                       &none                &none            &none                              &none 
-    &kp HASH       &kp N1     &kp N2      &kp N3    &bhm LEFT LPAR         &bhm RIGHT RPAR    &kp UNDER     &kp MINUS      &kp PLUS           &mt PRCNT AT
-    &kp STAR       &kp N4     &kp N5      &kp N6    &mt BSLH KP_DIVIDE     &kp COLON          &kp SEMI      &kp DQT        &kp APOS           &kp BSPC
-    &none          &kp N7     &kp N8      &kp N9    &kp QMARK              &kp EXCL           &kp COMMA     &kp DOT        &mt C_MUTE DLLR    &kp ENTER
-           &none          &kp N0                    &none                     &kp CLCK               &none
+            bindings = <
+&kp C_VOL_UP  &kp C_VOL_DN
+&kp PSCRN     &kp C_AC_SEARCH  &mkp LCLK  &kp F5  &kp F12
+&kp HASH      &kp N1           &kp N2     &kp N3  &mt LBKT LPAR  &mt RBKT RPAR    &kp UNDER  &kp MINUS   &kp PLUS    &kp AT
+&kp STAR      &kp N4           &kp N5     &kp N6  &kp SLASH      &kp COLON        &kp SEMI   &kp APOS    &kp DQT     &kp DEL
+&kp LSHFT     &kp N7           &kp N8     &kp N9  &kp QMARK      &kp EXCL         &kp COMMA  &kp DOT     &kp C_MUTE  &kp ENTER
+                               &kp LCTRL          &kp N0         &kp SPACE        &tog SYM   &tog UPPER
             >;
         };
 
         upper_layer {
-
             bindings = <
-        &mkp LCLK                                                                                                 &btswitch
-        &msc SCRL_UP                   &msc SCRL_DOWN             &mkp LCLK              &rcm LA(LEFT) RCLK                            &shiftapp
-    &tdclosewindow     &tdclosetab      &kp UP          &tdrefresh        &kp LC(T)      &kp LC(Y)              &none                &kp C_VOL_DN      &kp C_VOL_UP     &td2
-    &kp LC(A)          &kp LEFT         &kp DOWN        &kp RIGHT         &kp LA(ESC)    &kp LC(HOME)           &kp LC(END)          &none             &none            &mt DEL BSPC
-    &kp ESC            &kp LC(Z)        &kp LC(X)       &kp LC(C)         &kp LC(V)      &rcm LA(LEFT) RCLK     &rcm LA(LEFT) RCLK   &kp LG(D)         &td1             &kp ENTER
-                  &msc SCRL_UP          &msc SCRL_DOWN            &mkp LCLK                       &kp CLCK             &tdtodefault
+&msc SCRL_UP  &msc SCRL_DOWN
+&bt BT_SEL 0  &bt BT_SEL 1    &td0       &bt BT_SEL 2  &bt BT_SEL 3
+&none         &kp UP          &none      &sys_reset    &ext_power EP_TOG  &none                &kp LT      &kp GT      &kp PIPE     &kp KP_EQUAL
+&kp LEFT      &kp DOWN        &kp RIGHT  &none         &kp BSLH           &kp AMPS             &kp LBRC    &kp RBRC    &kp CARET    &kp BSPC
+&kp LSHFT     &none           &none      &none         &bl BL_DEC         &bl BL_TOG           &bl BL_INC  &none       &bootloader  &kp ENTER
+                              &kp LCTRL                &kp LALT           &hm OUT_TOG SPACE    &tog SYM    &tog UPPER
             >;
         };
     };
-}; 
+};
